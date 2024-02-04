@@ -107,7 +107,8 @@
                                     <!-- <p>{{posts.content}}</p> -->
                                     <small><a href="blog-category-01.html" title="">{{posts.category}}</a></small>
                                     <small><a href="single.html" title="">{{posts.date}}</a></small>
-                                    <small><a href="blog-author.html" title="">by Boby</a></small>
+                                    <small><a style="color: green;" href="{% url 'post_update' pk=posts.pk %}" title="">Update</a></small>
+                                    <small><a style="color: red;" href="{% url 'post_delete' pk=posts.pk %}" title="">Delete</a></small>
                                 </div><!-- end meta -->
                             </div><!-- end blog-box -->
                             {% endfor %}

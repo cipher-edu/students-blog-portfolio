@@ -1,0 +1,9 @@
+<center>
+    siz haqiqatdan ham ushbu tanlagan postingzini o'chirmoqchimisiz?
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <button type="submit">O'chirish</button>
+        <a href="{% url 'home' %}">Qaytarish</a>
+    </form>
+</center>

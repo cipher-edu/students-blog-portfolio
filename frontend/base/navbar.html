@@ -56,6 +56,11 @@
                     <li class="nav-item">
                         <a class="nav-link color-pink-hover" href="{% url 'home' %}">Home</a>
                     </li>
+                    {% for category in categories %}
+                    <li class="nav-item">
+                        <a class="nav-link color-pink-hover" href="?category={{category.name}}">{{category.name}}</a>
+                    </li>
+                    {% endfor %}
                 </ul>
             </div>
         </nav>
