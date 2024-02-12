@@ -53,16 +53,16 @@
     <!-- END LOADER -->
 
     <div id="wrapper">
-        <div class="collapse top-search" id="collapseExample">
+        <!-- <div class="collapse top-search" id="collapseExample">
             <div class="card card-block">
                 <div class="newsletter-widget text-center">
                     <form class="form-inline">
                         <input type="text" class="form-control" placeholder="What you are looking for?">
                         <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
                     </form>
-                </div><!-- end newsletter -->
+                </div>
             </div>
-        </div><!-- end top-search -->
+        </div> -->
 
         {% include 'base/navbar.html' %}
 
@@ -107,8 +107,11 @@
                                     <!-- <p>{{posts.content}}</p> -->
                                     <small><a href="blog-category-01.html" title="">{{posts.category}}</a></small>
                                     <small><a href="single.html" title="">{{posts.date}}</a></small>
+                                    {% if request.user.is_authenticated %}
                                     <small><a style="color: green;" href="{% url 'post_update' pk=posts.pk %}" title="">Update</a></small>
                                     <small><a style="color: red;" href="{% url 'post_delete' pk=posts.pk %}" title="">Delete</a></small>
+                                    {% else %}
+                                    {% endif %}
                                 </div><!-- end meta -->
                             </div><!-- end blog-box -->
                             {% endfor %}
